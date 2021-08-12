@@ -9,10 +9,18 @@
         android:id="@+id/productsFragment"
         android:name="com.jmb.mdpostres.ProductsFragment"
         android:label="@string/products_title"
-        tools:layout="@layout/fragment_products" />
+        tools:layout="@layout/fragment_products">
+        <action
+            android:id="@+id/action_products_to_cart"
+            app:destination="@id/cartFragment" />
+    </fragment>
     <fragment
         android:id="@+id/cartFragment"
         android:name="com.jmb.mdpostres.CartFragment"
         android:label="fragment_cart"
-        tools:layout="@layout/fragment_cart" />
+        tools:layout="@layout/fragment_cart">
+        <action
+            android:id="@+id/action_cart_to_products"
+            app:destination="@id/productsFragment" />
+    </fragment>
 </navigation>

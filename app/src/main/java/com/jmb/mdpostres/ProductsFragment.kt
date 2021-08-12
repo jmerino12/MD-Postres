@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import com.jmb.mdpostres.databinding.FragmentProductsBinding
 
@@ -13,14 +14,15 @@ class ProductsFragment : Fragment(), ProductsAdapter.OnClickListener {
     private var _binding: FragmentProductsBinding? = null
     private val binding get() = _binding!!
 
-    private lateinit var adapter: ProductsAdapter
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         // Inflate the layout for this fragment
         _binding = FragmentProductsBinding.inflate(inflater, container, false)
+        binding.btnAddCart.setOnClickListener {
+            findNavController().navigate(R.id.action_products_to_cart)
+        }
         return binding.root
     }
 
