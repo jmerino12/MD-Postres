@@ -5,4 +5,5 @@
     <string name="products_title">Productos</string>
     <string name="item_product_photo_description">Imagen del producto</string>
     <string name="item_product_name_hint">Nombre del producto</string>
+    <string name="products_add_cart">Añadir</string>
 </resources>
