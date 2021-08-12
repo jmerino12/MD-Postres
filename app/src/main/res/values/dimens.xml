@@ -4,4 +4,8 @@
     <dimen name="item_product_heigth">180dp</dimen>
     <dimen name="common_padding_default">16dp</dimen>
     <dimen name="common_padding_min">8dp</dimen>
+    <dimen name="car_divider_heigth">1dp</dimen>
+    <dimen name="car_divider_width">144dp</dimen>
+    <dimen name="common_padding_middle">24dp</dimen>
+    <dimen name="common_padding_none">0dp</dimen>
 </resources>
