@@ -5,7 +5,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.jmb.mdpostres.databinding.ItemCartBinding
 
-class CartAdapter(private val list: List<Product>) : RecyclerView.Adapter<BaseViewHolder<*>>() {
+class CartAdapter(private val list: Array<String>) : RecyclerView.Adapter<BaseViewHolder<*>>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BaseViewHolder<*> {
         val viewBinding =
@@ -22,9 +22,9 @@ class CartAdapter(private val list: List<Product>) : RecyclerView.Adapter<BaseVi
     override fun getItemCount() = list.size
 
     inner class CartHolder(private val binding: ItemCartBinding) :
-        BaseViewHolder<Product>(binding.root) {
-        override fun bind(item: Product, position: Int) {
-            binding.tvName.text = item.name
+        BaseViewHolder<String>(binding.root) {
+        override fun bind(item: String, position: Int) {
+            binding.tvName.text = item
         }
 
     }

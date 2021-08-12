@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.jmb.mdpostres.databinding.FragmentCartBinding
 
 class CartFragment : Fragment() {
@@ -24,9 +25,21 @@ class CartFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        configAdapter()
         binding.btnBack.setOnClickListener {
             findNavController().navigate(R.id.action_cart_to_products)
         }
+    }
+
+    private fun configAdapter() {
+        binding.rvCart.adapter = arguments?.let {
+            CartFragmentArgs.fromBundle(it).products?.let {
+                CartAdapter(
+                    it
+                )
+            }
+        }
+        binding.rvCart.layoutManager = LinearLayoutManager(requireContext())
     }
 
 }

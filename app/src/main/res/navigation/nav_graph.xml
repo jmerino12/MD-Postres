@@ -22,5 +22,9 @@
         <action
             android:id="@+id/action_cart_to_products"
             app:destination="@id/productsFragment" />
+        <argument
+            android:name="products"
+            app:argType="string[]"
+            app:nullable="false" />
     </fragment>
 </navigation>

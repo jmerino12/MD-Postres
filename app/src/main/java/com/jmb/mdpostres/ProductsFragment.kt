@@ -13,6 +13,12 @@ class ProductsFragment : Fragment(), ProductsAdapter.OnClickListener {
 
     private var _binding: FragmentProductsBinding? = null
     private val binding get() = _binding!!
+    private lateinit var selectedProducts: ArrayList<Product>
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        selectedProducts = ArrayList()
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -21,10 +27,24 @@ class ProductsFragment : Fragment(), ProductsAdapter.OnClickListener {
         // Inflate the layout for this fragment
         _binding = FragmentProductsBinding.inflate(inflater, container, false)
         binding.btnAddCart.setOnClickListener {
-            findNavController().navigate(R.id.action_products_to_cart)
+            findNavController().navigate(
+                ProductsFragmentDirections.actionProductsToCart(
+                    getProductStr()
+                )
+            )
         }
         return binding.root
     }
+
+    private fun getProductStr(): Array<String> {
+        var productsStr = ArrayList<String>()
+        for (product in selectedProducts) {
+            productsStr.add(product.name)
+        }
+
+        return productsStr.toTypedArray()
+    }
+
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -108,8 +128,13 @@ class ProductsFragment : Fragment(), ProductsAdapter.OnClickListener {
         return products
     }
 
-    override fun onClick(product: Product) {
 
+    override fun onClick(product: Product) {
+        if (product.selected) {
+            selectedProducts.add(product)
+        } else {
+            selectedProducts.remove(product)
+        }
     }
 
 }
