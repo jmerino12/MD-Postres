@@ -10,4 +10,9 @@
         android:name="com.jmb.mdpostres.ProductsFragment"
         android:label="@string/products_title"
         tools:layout="@layout/fragment_products" />
+    <fragment
+        android:id="@+id/cartFragment"
+        android:name="com.jmb.mdpostres.CartFragment"
+        android:label="fragment_cart"
+        tools:layout="@layout/fragment_cart" />
 </navigation>

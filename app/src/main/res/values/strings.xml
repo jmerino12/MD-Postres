@@ -6,4 +6,5 @@
     <string name="item_product_photo_description">Imagen del producto</string>
     <string name="item_product_name_hint">Nombre del producto</string>
     <string name="products_add_cart">Añadir</string>
+    <string name="car_price">$ 1.500</string>
 </resources>
