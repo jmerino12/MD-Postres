@@ -39,4 +39,7 @@
             android:id="@+id/action_confirmation_to_products"
             app:destination="@id/productsFragment" />
     </fragment>
+    <action
+        android:id="@+id/action_global_confirmation"
+        app:destination="@id/confirmationFragment" />
 </navigation>
