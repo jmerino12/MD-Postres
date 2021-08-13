@@ -18,4 +18,6 @@
     <string name="confirmation_done">Listo</string>
     <string name="confirmation_title">Pago</string>
     <string name="confirmation_title_alt">Pago (by Id)</string>
+    <string name="bottom_sheet_title">¿Salir de MD Postres?</string>
+    <string name="bottom_sheet_exit">Salir</string>
 </resources>

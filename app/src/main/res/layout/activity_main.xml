@@ -22,4 +22,8 @@
     <include
         android:id="@+id/contentMain"
         layout="@layout/content_main" />
+
+    <include
+        android:id="@+id/SheetExit"
+        layout="@layout/bottom_sheet_exit" />
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
