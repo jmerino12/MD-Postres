@@ -17,7 +17,7 @@
     <fragment
         android:id="@+id/cartFragment"
         android:name="com.jmb.mdpostres.CartFragment"
-        android:label="fragment_cart"
+        android:label="@string/cart_title"
         tools:layout="@layout/fragment_cart">
         <action
             android:id="@+id/action_cart_to_products"
@@ -33,7 +33,7 @@
     <fragment
         android:id="@+id/confirmationFragment"
         android:name="com.jmb.mdpostres.ConfirmationFragment"
-        android:label="fragment_confirmation"
+        android:label="@string/confirmation_title"
         tools:layout="@layout/fragment_confirmation">
         <action
             android:id="@+id/action_confirmation_to_products"
