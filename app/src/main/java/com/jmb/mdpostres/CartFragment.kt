@@ -2,6 +2,7 @@ package com.jmb.mdpostres
 
 import android.os.Bundle
 import android.view.LayoutInflater
+import android.view.Menu
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
@@ -35,6 +36,14 @@ class CartFragment : Fragment() {
         binding.btnPay.setOnClickListener {
             findNavController().navigate(R.id.action_cart_to_confirmation)
         }
+
+        setHasOptionsMenu(true)
+    }
+
+    override fun onPrepareOptionsMenu(menu: Menu) {
+        menu.findItem(R.id.action_confirmation).isVisible = false
+        menu.findItem(R.id.confirmationFragment).isVisible = false
+        super.onPrepareOptionsMenu(menu)
     }
 
     private fun configAdapter() {
