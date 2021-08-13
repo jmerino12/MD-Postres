@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
+import com.google.android.material.transition.platform.MaterialFadeThrough
 import com.google.android.material.transition.platform.MaterialSharedAxis
 import com.jmb.mdpostres.databinding.FragmentProductsBinding
 
@@ -19,6 +20,7 @@ class ProductsFragment : Fragment(), ProductsAdapter.OnClickListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         selectedProducts = ArrayList()
+        enterTransition = MaterialFadeThrough()
         reenterTransition = MaterialSharedAxis(MaterialSharedAxis.X, false)
         exitTransition = MaterialSharedAxis(MaterialSharedAxis.X, true)
     }
