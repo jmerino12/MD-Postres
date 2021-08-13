@@ -34,5 +34,9 @@
         android:id="@+id/confirmationFragment"
         android:name="com.jmb.mdpostres.ConfirmationFragment"
         android:label="fragment_confirmation"
-        tools:layout="@layout/fragment_confirmation" />
+        tools:layout="@layout/fragment_confirmation">
+        <action
+            android:id="@+id/action_confirmation_to_products"
+            app:destination="@id/productsFragment" />
+    </fragment>
 </navigation>
