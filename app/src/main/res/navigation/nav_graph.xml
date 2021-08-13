@@ -12,7 +12,9 @@
         tools:layout="@layout/fragment_products">
         <action
             android:id="@+id/action_products_to_cart"
-            app:destination="@id/cartFragment" />
+            app:destination="@id/cartFragment"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right" />
     </fragment>
     <fragment
         android:id="@+id/cartFragment"
@@ -21,7 +23,9 @@
         tools:layout="@layout/fragment_cart">
         <action
             android:id="@+id/action_cart_to_products"
-            app:destination="@id/productsFragment" />
+            app:destination="@id/productsFragment"
+            app:enterAnim="@android:anim/slide_in_left"
+            app:exitAnim="@android:anim/slide_out_right" />
         <argument
             android:name="products"
             app:argType="string[]"
