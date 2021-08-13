@@ -8,11 +8,15 @@ import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.NavigationUI
+import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.jmb.mdpostres.databinding.ActivityMainBinding
+import com.jmb.mdpostres.databinding.BottomSheetExitBinding
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
+    private lateinit var bottomSheetExitBinding: BottomSheetExitBinding
+    private lateinit var bottomSheetBehavior: BottomSheetBehavior<*>
     private lateinit var navController: NavController
 
 
@@ -30,6 +34,18 @@ class MainActivity : AppCompatActivity() {
         navController.addOnDestinationChangedListener { controller, destination, arguments ->
             binding.toolbar.title = destination.label
             binding.toolbar.navigationIcon = null
+        }
+
+        bottomSheetExitBinding = binding.sheetExit
+
+        bottomSheetBehavior = BottomSheetBehavior.from(bottomSheetExitBinding.root)
+        bottomSheetBehavior.state = BottomSheetBehavior.STATE_HIDDEN
+
+        bottomSheetExitBinding.btnExit.setOnClickListener {
+            finish()
+        }
+        bottomSheetExitBinding.btnClose.setOnClickListener {
+            bottomSheetBehavior.state = BottomSheetBehavior.STATE_HIDDEN
         }
     }
 
@@ -52,6 +68,6 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onBackPressed() {
-
+        bottomSheetBehavior.state = BottomSheetBehavior.STATE_EXPANDED
     }
 }
