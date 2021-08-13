@@ -11,4 +11,7 @@
     <string name="cart_back">Atras</string>
 
     <string name="cart_sum">Total: $%1.2f</string>
+    <string name="confirmation_message">Sus alimentos llegaran pronto, Gracias por su compra.</string>
+    <string name="confirmation_status">Pago exitoso</string>
+    <string name="confirmation_done">Listo</string>
 </resources>
