@@ -23,5 +23,13 @@ class MainActivity : AppCompatActivity() {
         val navController = navHostFragment.navController
         val configuration = AppBarConfiguration.Builder(navController.graph).build()
         NavigationUI.setupWithNavController(binding.toolbar, navController, configuration)
+        navController.addOnDestinationChangedListener { controller, destination, arguments ->
+            binding.toolbar.title = destination.label
+            binding.toolbar.navigationIcon = null
+        }
+    }
+
+    override fun onBackPressed() {
+
     }
 }
