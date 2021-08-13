@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.google.android.material.transition.platform.MaterialSharedAxis
 import com.jmb.mdpostres.databinding.FragmentCartBinding
 
 class CartFragment : Fragment() {
@@ -16,6 +17,12 @@ class CartFragment : Fragment() {
     private val binding get() = _binding!!
 
     private lateinit var adapter: CartAdapter
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        enterTransition = MaterialSharedAxis(MaterialSharedAxis.X, true)
+        returnTransition = MaterialSharedAxis(MaterialSharedAxis.X, false)
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
