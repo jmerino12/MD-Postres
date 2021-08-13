@@ -39,10 +39,16 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        if (item.itemId == R.id.action_confirmation) {
+        /*if (item.itemId == R.id.action_confirmation) {
             navController.navigate(R.id.action_global_confirmation)
-        }
-        return super.onOptionsItemSelected(item)
+        }*/
+
+        //return super.onOptionsItemSelected(item)
+        return NavigationUI.onNavDestinationSelected(
+            item,
+            navController
+        ) || super.onOptionsItemSelected(item)
+
     }
 
     override fun onBackPressed() {

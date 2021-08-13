@@ -5,4 +5,9 @@
         android:id="@+id/action_confirmation"
         android:title="@string/confirmation_title"
         app:showAsAction="never" />
+
+    <item
+        android:id="@+id/confirmationFragment"
+        android:title="@string/confirmation_title_alt"
+        app:showAsAction="never" />
 </menu>

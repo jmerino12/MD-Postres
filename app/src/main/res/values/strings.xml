@@ -17,4 +17,5 @@
     <string name="confirmation_status">Pago exitoso</string>
     <string name="confirmation_done">Listo</string>
     <string name="confirmation_title">Pago</string>
+    <string name="confirmation_title_alt">Pago (by Id)</string>
 </resources>
