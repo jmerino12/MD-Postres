@@ -14,6 +14,8 @@ class CartFragment : Fragment() {
     private var _binding: FragmentCartBinding? = null
     private val binding get() = _binding!!
 
+    private lateinit var adapter: CartAdapter
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -29,17 +31,19 @@ class CartFragment : Fragment() {
         binding.btnBack.setOnClickListener {
             findNavController().navigate(R.id.action_cart_to_products)
         }
+
+        binding.btnPay.setOnClickListener {
+            findNavController().navigate(R.id.action_cart_to_confirmation)
+        }
     }
 
     private fun configAdapter() {
-        binding.rvCart.adapter = arguments?.let {
-            CartFragmentArgs.fromBundle(it).products?.let {
-                CartAdapter(
-                    it
-                )
-            }
-        }
+        adapter =
+            arguments?.let { CartFragmentArgs.fromBundle(it).products }?.let { CartAdapter(it) }!!
+        binding.rvCart.adapter = adapter
         binding.rvCart.layoutManager = LinearLayoutManager(requireContext())
+
+        binding.tvSum.text = getString(R.string.cart_sum, adapter.itemCount.toFloat())
     }
 
 }

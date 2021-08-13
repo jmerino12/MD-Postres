@@ -26,5 +26,13 @@
             android:name="products"
             app:argType="string[]"
             app:nullable="false" />
+        <action
+            android:id="@+id/action_cart_to_confirmation"
+            app:destination="@id/confirmationFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/confirmationFragment"
+        android:name="com.jmb.mdpostres.ConfirmationFragment"
+        android:label="fragment_confirmation"
+        tools:layout="@layout/fragment_confirmation" />
 </navigation>

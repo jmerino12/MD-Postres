@@ -1,6 +1,5 @@
 <resources>
     <string name="app_name">MD Postres</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="products_title">Productos</string>
     <string name="item_product_photo_description">Imagen del producto</string>
@@ -10,4 +9,6 @@
     <string name="product_check_list">Pedido:</string>
     <string name="cart_pay">Pagar</string>
     <string name="cart_back">Atras</string>
+
+    <string name="cart_sum">Total: $%1.2f</string>
 </resources>
